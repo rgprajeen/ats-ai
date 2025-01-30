@@ -1,94 +1,88 @@
 # AI-Powered CV: Anonymization, Reformatting & Agentic AI
 
-**Objective**  
-Create a **Next.js** web application that:
+## Overview
 
-1. **Parses and Anonymizes** a CV (removing personal data while retaining minimal essential info).
-2. **Reformats** the CV into a consistent, user-friendly layout (with clear headings, bold text, etc.).
-3. Displays the **updated CV** in a **rich text editor**, allowing the user to make final adjustments.
-4. Incorporates a **required** agentic AI component—where you decide how an AI agent can further aid the CV process or potentially enhance the next step in the recruitment pipeline.
+This project is a **Next.js** web application designed to:
 
-We’ll provide:
+1. **Parse and Anonymize** a CV by removing personal data while retaining essential information.
+2. **Reformat** the CV into a consistent, user-friendly layout.
+3. Display the **updated CV** in a **rich text editor** for user adjustments.
+4. Incorporate an **agentic AI component** to enhance the CV process or recruitment pipeline.
 
-- **OpenAI API Key**.
-- **Sample CV File**.
-- A reference for **desired final CV styling** (headings, bold text, spacing).
+**Demo Link:** [Here](https://ats-ai-challenge.vercel.app/)
 
----
+## Features
 
-## 1. Core Tasks
+- **CV Input**: Upload or select a sample CV.
+- **Anonymization**: Remove personally identifiable information.
+- **Reformatting**: Organize the CV into a consistent layout.
+- **User Review**: Edit the updated CV in a rich text editor.
+- **Agentic AI**: Implement a multi-step AI process to assist in one aspect of the project.
 
-1. **CV Input**
+## Technical Stack
 
-   - Let the user upload a CV or select a provided sample.
-   - How you parse the file and retrieve text is up to you.
+- **Framework**: Next.js
+- **UI Library**: [shadcn/ui](https://ui.shadcn.com/)
+- **Deployment**: Vercel
 
-2. **Anonymization**
+## Getting Started
 
-   - Remove personally identifiable information, retaining only minimal details if needed (e.g., a first name).
-   - Document any assumptions or prompts you use.
+### Prerequisites
 
-3. **Reformatting**
+- Node.js
+- npm or yarn
 
-   - Organize the CV into a **consistent** layout—headings, bold text, bullet points—matching our provided sample-formatted-cv.pdf.
+### Installation
 
-4. **User Review**
+1. Clone the repository:
 
-   - Show the updated CV in a **rich text editor**, so the user can adjust or finalize it before completion.
+   ```sh
+   git clone https://github.com/rgprajeen/ats-ai.git
+   cd ats-ai
+   ```
 
-5. **Agentic AI**
-   - Use a multi-step or “agent-like” approach in at least one aspect of this project—whether it’s during anonymization, reformatting, or another creative step in the recruitment pipeline.
-   - We encourage you to **be inventive** about how an AI agent might assist or add value here.
+2. Install dependencies:
 
----
+   ```sh
+   npm install
+   ```
 
-## 2. Technical Guidelines
+3. Set up environment variables:
+   - Copy `.env.example` to `.env`
+   - Add your OpenAI API Key to a `.env` file.
 
-- **Framework**: Next.js (preferably using the App Router).
-- **UI Library**: You may use [shadcn/ui](https://ui.shadcn.com/) for components.
-- **Deployment**: We’ll review your **Vercel** deployment—please provide the live URL.
-- **Testing**: Include at least some **unit tests** to demonstrate quality.
+### Running the Application
 
----
+1. Start the development server:
 
-## 3. Submission Guidelines
+   ```sh
+   npm run dev
+   ```
 
-1. **Repository & Code**
+2. Open your browser and navigate to `http://localhost:3000`.
 
-   - Fork or clone this repo (or create a private one and invite us).
-   - Organize your code however you see fit.
-   - When complete, either:
-     - Share your forked repository URL with us
-     - Submit a pull request to this repository
-     - If using a private repository, invite us as collaborators
+### Deployment
 
-2. **Implementation**
+Deploy the application to Vercel by following their [deployment guide](https://vercel.com/docs).
 
-   - Complete the tasks (anonymization, reformatting, rich text editing) while integrating at least one **agentic AI** step.
-   - Document your approach in a readable file for review.
+## Testing
 
-3. **Deployment**
+Run unit tests to ensure quality:
 
-   - Deploy to **Vercel** and share the link.
-   - Ensure we can test the flow end to end (upload → anonymize → reformat → review → final).
+```sh
+npm run test
+```
 
-4. **Testing & Documentation**
-   - Provide a **quick start** guide for installing/running.
-   - Show us how to run your tests.
+## Assumptions
 
----
+1. **CV Parsing**: The application assumes that the uploaded CVs are in a format that can be parsed effectively (e.g., PDF, DOCX, or plain text).
 
-## 4. Evaluation Criteria
+2. **Anonymization**: The anonymization process will remove all personally identifiable information (PII) such as phone numbers, email addresses, and social media links. Only the first name may be retained if necessary.
 
-1. **Functionality & Usability**: Does the CV anonymization and reformatting work? Is the editor intuitive?
-2. **Agentic AI**: Have you implemented a multi-step or agent-like process in at least one stage?
-3. **Code Quality & Organization**: Is the code maintainable, readable, and structured well?
-4. **Testing & Documentation**: Do you have meaningful tests, and are setup/deployment instructions clear?
-5. **Styling & UX**: Are headings, bold text, and layout consistent with the modern design principles?
+3. **Reformatting**: The reformatting process will follow a consistent layout as provided in the sample-formatted-cv.pdf. This includes using headings, bold text, and bullet points for clarity.
 
----
+4. **Agentic AI Component**: The AI component will use a multi-step approach involving specialized assistants (formatter, enhancer, anonymizer, linguist) to process the CV. Each assistant has a specific role and will not be referred to by name during the process.
 
-## 5. Final Notes
+5. **Language and Formatting**: The linguist assistant will handle language-related tasks to ensure proper grammar and structure without changing the overall meaning of the content.
 
-- Feel free to **innovate**—whether you integrate AI for next-step recruitment tasks, sophisticated parsing, or additional features.
-- If you have any questions or clarifications, reach out.
+6. **Sensitive Information Handling**: The anonymizer will prioritize caution and remove any ambiguous information to ensure no PII escapes the anonymization stage.

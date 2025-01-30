@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Figtree } from "next/font/google";
+
+const figtree = Figtree({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "ATS Challenge",
-  description: "ATS Challenge",
+  title: "ATS.ai | Supercharge Your Hiring Process",
+  description:
+    "ATS.ai is a platform that leverages AI to streamline the recruitment process, helping you find the best candidates faster.",
 };
 
 export default function RootLayout({
@@ -13,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className={`${figtree.className} antialiased`}>{children}</body>
     </html>
   );
 }
